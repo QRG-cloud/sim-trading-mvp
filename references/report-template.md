@@ -36,3 +36,6 @@ For each window include:
 ## Truthfulness reminder
 
 If any figure is unavailable or estimated, label it clearly. Never present guessed values as retrieved market data.
+
+Use the single primary market-data source (recommended: Finnhub) for prices, benchmark comparison, and account valuation whenever available.
+Do not place API keys inside the report template or any public skill files.

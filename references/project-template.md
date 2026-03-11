@@ -17,8 +17,13 @@ Use this when creating a new simulated trading project.
 - `rules`
 - `positions`
 - `watchlist`
+- `dataSource`
 - `createdAt`
 - `updatedAt`
+
+Recommended default:
+
+- `dataSource.primary = "finnhub"`
 
 ## Default rules
 

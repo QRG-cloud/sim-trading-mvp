@@ -23,6 +23,7 @@ For the first three jobs:
 
 - load account state
 - inspect prior same-day decisions
+- load price context from the single primary market-data source (recommended: Finnhub)
 - research real market context
 - output one action only: `BUY`, `SELL`, or `HOLD`
 - update account/log files

@@ -9,6 +9,8 @@ Run a disciplined paper-trading loop for an OpenClaw user.
 
 This skill is meant to be reusable across different OpenClaw setups. Do not assume one specific user's style, files, or schedule. Confirm the user's preferences before locking in the workflow.
 
+Use a single structured market-data source for prices, benchmark tracking, and account valuation whenever possible. Current recommended source for this skill: **Finnhub**.
+
 ## Non-negotiable rule: truthfulness
 
 Never fabricate market data, execution prices, benchmark performance, news, portfolio state, or trade history.
@@ -150,16 +152,30 @@ For the first three, make exactly one action decision.
 
 Before every decision, gather enough real market context to justify the move.
 
-Prioritize:
+Use **Finnhub as the primary single source** for:
+
+- current price / quote lookups
+- historical price context
+- benchmark symbols such as `SPY` and `QQQ`
+- account valuation inputs
+
+Use open research/news sources as secondary inputs for:
 
 - broad market tone
 - relevant macro events
 - company-specific catalysts
 - earnings / guidance
-- price context for held names and watchlist names
-- any obvious benchmark move that changes the risk environment
+- narrative context around held names and watchlist names
 
 Prefer a small number of useful sources over noisy overcollection.
+
+## Data source and secrets
+
+Store API keys outside the skill itself, for example in a local project `.env` or another secret-bearing runtime configuration.
+
+Never hardcode, publish, commit, or echo a user's market-data API key into `SKILL.md`, reference files, public repos, or ClawHub releases.
+
+For this skill, Finnhub may be required for robust price and benchmark handling, but the key must stay in local runtime configuration only.
 
 ## Authenticity guardrails
 
